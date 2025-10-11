@@ -217,13 +217,13 @@ const Cart = () => {
 
       // Get order ID from backend
       const response = await axiosInstance.get(
-        `/private/order/payment/${(total*100 + (noOfItems * 50))}`
+        `/private/order/payment/${(total*100)}`
       );
       const order_id = response.data;
 
       const options = {
         key: "rzp_live_RCemjVt0zfY8v2",
-        amount: (total*100 + (noOfItems * 50)),
+        amount: (total*100),
         currency: "INR",
         name: "Greenplore",
         description: "Order Payment",
@@ -354,9 +354,8 @@ const Cart = () => {
       {/* Price Breakdown */}
       <div className="text-sm sm:text-base text-gray-700">
         <div className="font-medium">Subtotal: {total}</div>
-        <div className="font-medium">Shipping: 50x{noOfItems} = {noOfItems * 50}</div>
         <div className="text-lg sm:text-xl font-bold text-gray-900 mt-1">
-          Total: ₹{total + (noOfItems * 50)}
+          Total: ₹{total}
         </div>
       </div>
 
