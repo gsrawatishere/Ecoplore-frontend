@@ -353,7 +353,7 @@ const Cart = () => {
       
       {/* Price Breakdown */}
       <div className="text-sm sm:text-base text-gray-700">
-        <div className="font-medium">Subtotal: {total}</div>
+        {/* <div className="font-medium">Subtotal: {total}</div> */}
         <div className="text-lg sm:text-xl font-bold text-gray-900 mt-1">
           Total: ₹{total}
         </div>
