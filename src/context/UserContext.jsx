@@ -2,6 +2,7 @@ import React, {createContext, useEffect, useState} from 'react'
 import axiosInstance from '../api/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 
+
 export const UserContext = createContext({
     userId: null ,
     userRole : null
@@ -14,13 +15,14 @@ export const UserProvider = ({children})=>{
     const navigate = useNavigate();
 
     const fetchUser = async ()=>{
+        
         try{
             const response = await axiosInstance.get("/private/me");
             if(response.status==200){
                 setUserId(response.data.email);
                 setUserRole(response.data.role);
                 if(response.data.role === 'SELLER'){
-                     navigate('/seller-dashboard')
+                     navigate('/seller-dashboard');
                 }
                 setIsLoggedIn(true);
             }
