@@ -5,11 +5,13 @@ import Navbar from './Components/Home/Navbar'
 import Footer from './Components/Home/Footer'
 import { Toaster } from 'react-hot-toast';
 import ScrollToTop from './Components/ScrollTop'
+import AuthRedirector from './Lib/AuthRedirector'
 
 const App = () => {
 
   return (
     <>
+    <AuthRedirector />
      <ScrollToTop />
     <Top />
     <Navbar/>
