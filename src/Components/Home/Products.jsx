@@ -65,7 +65,11 @@ export default function Products({ cat }) {
 
               {/* "Items left" or placeholder to maintain symmetry */}
               <div className="h-4 mt-1 flex items-center justify-center">
-                {product.noOfUnits < 11 ? (
+                {product.noOfUnits === 0 ? (
+                  <p className="text-red-500 font-semibold text-xs">
+                    Out of Stock
+                  </p>
+                ) : product.noOfUnits < 11 ? (
                   <p className="text-red-500 text-xs">
                     {product.noOfUnits} items left
                   </p>

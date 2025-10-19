@@ -27,7 +27,7 @@ export default function SimilarProducts({ products }) {
           >
             <div className="relative">
               {/* Product Image */}
-              <div className="w-[30vw] sm:w-[30vw] md:w-[20vw] lg:w-[15vw] xl:w-[12vw] aspect-[1/1] overflow-hidden rounded-lg">
+              <div className=" aspect-[1/1] overflow-hidden rounded-lg m-auto w-full">
                 <img
                   src={product.imageUrl}
                   alt={product.name}
@@ -37,7 +37,11 @@ export default function SimilarProducts({ products }) {
 
               {/* "Items left" or placeholder to maintain symmetry */}
               <div className="h-4 mt-1 flex items-center justify-center">
-                {product.noOfUnits < 11 ? (
+                {product.noOfUnits === 0 ? (
+                  <p className="text-red-500 font-semibold text-xs">
+                    Out of Stock
+                  </p>
+                ) : product.noOfUnits < 11 ? (
                   <p className="text-red-500 text-xs">
                     {product.noOfUnits} items left
                   </p>
